@@ -1,0 +1,203 @@
+/*
+	* Project Name: Maersk Coding Assignment
+	* Module/File: Main style
+	* Author: Anshuman Mishra
+	* Last Updated on: 10th Jan, 2021;
+*/
+
+/*	Declaring css color variables	*/
+:root {
+	--white: #ffffff;
+	--lighter-grey: #EFEFEF;
+	--light-grey: #BFBFBF;
+	--primary: #2B8EAD;
+	--primary-button: #72C3DC;
+	--primary-light: #6F98A8;
+	--primary-dark: #2F454E;
+	--darkest-grey: #333333;
+	--black: #000000;
+}
+
+/*	Normalizing the default page CSS	*/
+* {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+/*	Main page styling starts here	*/
+/*	Page height restricted to viewport height of the page 	*/
+main {
+	font-family: sans-serif;
+	background: var(--white);
+	height: 100vh;
+}
+
+main .maersk-container {
+	max-width: 960px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+main .maersk-container h3 {
+	font-weight: 400;
+	padding: 10px 0;
+}
+
+main .maersk-container .maersk-wrapper {
+	border-top: 4px solid var(--light-grey);
+	display: flex;
+	flex-wrap: wrap;
+}
+
+main .maersk-container .maersk-wrapper section {
+	flex-basis: 75%;
+}
+
+main .maersk-container .maersk-wrapper section ul {
+	display: grid;
+  	grid-template-columns: auto auto auto;
+}
+
+main .maersk-container .maersk-wrapper section ul li {
+	list-style-type: none;
+	padding: 5vh 0;
+	color: var(--white);
+	font-size: 4rem;
+	background-color: var(--lighter-grey);
+}
+
+main .maersk-container .maersk-wrapper section ul li[class$="1"], 
+main .maersk-container .maersk-wrapper section ul li[class$="8"] {
+	background-color: var(--primary-light);
+}
+
+main .maersk-container .maersk-wrapper section ul li[class$="2"], 
+main .maersk-container .maersk-wrapper section ul li[class$="4"] {
+	background-color: var(--primary);
+}
+
+main .maersk-container .maersk-wrapper section ul li[class$="3"], 
+main .maersk-container .maersk-wrapper section ul li[class$="5"], 
+main .maersk-container .maersk-wrapper section ul li[class$="9"] {
+	background-color: var(--primary-dark);
+}
+
+main .maersk-container .maersk-wrapper section ul li[class$="6"], 
+main .maersk-container .maersk-wrapper section ul li[class$="7"] {
+	background-color: var(--light-grey);
+}
+
+main .maersk-container .maersk-wrapper aside {
+	flex-basis: 25%;
+	background-color: var(--lighter-grey);
+}
+
+main .maersk-container .maersk-wrapper aside button {
+	background-color: var(--primary-button);
+	text-transform: uppercase;
+	color: var(--white);
+	border: 0;
+	padding: 15px 20px;
+	width: 75%;
+	margin-top: 25px;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: 0 6px var(--primary);
+}
+
+main .maersk-container .maersk-wrapper aside button:active {
+	transform: translateY(4px);
+	box-shadow: 0 3px var(--primary);
+}
+
+main .maersk-container p {
+	font-style: italic;
+	font-size: 0.75rem;
+	background-color: var(--lighter-grey);
+	padding: 20px 0 50px;
+}
+
+
+/*	Media queries for responsivesness for screen width below 414px - iphone 5/6/7/8/10/11	*/
+@media all and (max-width: 414px) {
+	main .maersk-container h3 {
+		background: var(--darkest-grey);
+		color: var(--white);
+	}
+
+	main .maersk-container .maersk-wrapper {
+		flex-wrap: wrap-reverse;
+		border-top: 0;
+		padding: 0 20px;
+	}
+
+	main .maersk-container .maersk-wrapper section, 
+	main .maersk-container .maersk-wrapper aside {
+		flex-basis: 100%;
+	}
+
+	main .maersk-container .maersk-wrapper section ul {
+	  	grid-template-columns: auto;
+	}
+
+	main .maersk-container .maersk-wrapper section ul li {
+		padding: 1.5vh 0;
+		margin: 2px 0;
+		color: var(--black);
+		font-size: 1.25rem;
+	}
+
+	main .maersk-container .maersk-wrapper section ul li[class*="maersk-box"] {
+		background-color: var(--lighter-grey);
+		position: relative;
+	}
+
+	main .maersk-container .maersk-wrapper section ul li[class*="maersk-box"]:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 8px;
+	}
+
+	main .maersk-container .maersk-wrapper section ul li[class$="1"]:before, 
+	main .maersk-container .maersk-wrapper section ul li[class$="8"]:before {
+		background-color: var(--primary-light);
+	}
+
+	main .maersk-container .maersk-wrapper section ul li[class$="2"]:before, 
+	main .maersk-container .maersk-wrapper section ul li[class$="4"]:before {
+		background-color: var(--primary);
+	}
+
+	main .maersk-container .maersk-wrapper section ul li[class$="3"]:before, 
+	main .maersk-container .maersk-wrapper section ul li[class$="5"]:before, 
+	main .maersk-container .maersk-wrapper section ul li[class$="9"]:before {
+		background-color: var(--primary-dark);
+	}
+
+	main .maersk-container .maersk-wrapper section ul li[class$="6"]:before, 
+	main .maersk-container .maersk-wrapper section ul li[class$="7"]:before {
+		background-color: var(--light-grey);
+	}
+
+	main .maersk-container .maersk-wrapper aside {
+		background-color: var(--white);
+	}
+
+	main .maersk-container .maersk-wrapper aside button {
+		width: 30%;
+		margin: 10px 0 20px;
+	}
+
+	main .maersk-container p {
+		background-color: var(--white);
+		padding-bottom: 10px;
+	}
+}

@@ -1,0 +1,11 @@
+{
+  "name": "maersk-coding",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Maersk UI coding assignment",
+  "main": "scripts.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "author": "Anshuman Mishra"
+}
